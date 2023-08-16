@@ -1,5 +1,5 @@
-ublic class Primer {
+Public class Primer {
     public static void main(String[] args) {
       System.out.println("Hello World!");
     }
-}\
+}
