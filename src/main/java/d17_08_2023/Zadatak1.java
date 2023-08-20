@@ -23,6 +23,6 @@ public class Zadatak1 {
 
         int starost = 2023 - godinaRodjenja;
 
-        System.out.println(ime + " " + prezime +" - " + starost + " god");
+        System.out.println(ime + " " + prezime + " - " + starost + " god");
     }
 }
