@@ -10,29 +10,15 @@ public class Zadatak5 {
         Scanner s = new Scanner(System.in);
 
         System.out.println("Unesite dužinu lozinke: ");
-        int n = s.nextInt();
-        String lozinka = "";
+        int duzina = s.nextInt();
+
 
         System.out.println("Da li želite da sadrži specijalan karakter: ");
-        boolean includeSpecialCharacter = false;
+        boolean withSpecialCharacter = s.nextBoolean();
 
-        includeSpecialCharacter = s.nextBoolean();
 
-        if (includeSpecialCharacter == true) {
-            for (int i = 0; i < n - 2; i++) {
-                String x = generisiNasumicnoZnak();
-                String y = generisiNasumicnoSpecijalanZnak();
-
-                lozinka = lozinka + x + y;
-            }
-        } else {
-            for (int i = 0; i < n; i++) {
-                String x = generisiNasumicnoZnak();
-                lozinka = lozinka + x;
-            }
-        }
-
-        System.out.println("Generisana lozinka: " + lozinka);
+        String password = generisiLozinku(duzina, withSpecialCharacter);
+        System.out.println("Generisana lozinka: " + password);
     }
 
     public static String generisiNasumicnoZnak() {
@@ -98,4 +84,22 @@ public class Zadatak5 {
         }
         return String.valueOf(specialCharacters.get(intRandom));
     }
+
+    public static String generisiLozinku(int n, boolean includeSpecialCharacter) {
+
+        String lozinka = "";
+
+        for (int i = 1; i <= n; i++) {
+            if (includeSpecialCharacter == true && i == n) {
+                lozinka += generisiNasumicnoSpecijalanZnak();
+            } else {
+
+                lozinka += generisiNasumicnoZnak();
+
+            }
+        }
+
+        return lozinka;
+    }
 }
+
