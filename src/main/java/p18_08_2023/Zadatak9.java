@@ -18,9 +18,8 @@ public class Zadatak9 {
 
         for ( int i = 0; i < 11; i++) {
             if ( i != a && i != b){
-            System.out.print(i + ", ");
-        }
-            //else {...print("_")}
+            System.out.print(i + ", ");}
+            else {System.out.print("_, ");}
 
         }
 
