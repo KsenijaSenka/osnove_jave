@@ -1,9 +1,12 @@
 package d15_09_2023;
 
+import java.util.ArrayList;
+
 public class Igrac extends Osoba{
     private int broj;
     private String pozicija;
     private boolean kapiten;
+    private ArrayList<Karton>kartoni=new ArrayList<>();
     public Igrac(){}
     public Igrac(String ime,String prezime,int godinaRodjenja,String jmbg,
                  int broj,String pozicija,boolean kapiten){
@@ -43,6 +46,21 @@ public class Igrac extends Osoba{
         System.out.println("Broj: " + this.broj + ", pozicija: " +
                 this.pozicija);
             System.out.println("Da li je kapiten: "+this.kapiten);
+        System.out.println("Dobijeni zuti kartoni: "+this.brojZutihKartona());
         }
+
+    public void dodajKarton(Karton noviKarton) {
+        this.kartoni.add(noviKarton);
     }
+
+    public int brojZutihKartona() {
+        int brojZutih = 0;
+        for (int i = 0; i < kartoni.size(); i++) {
+            if (kartoni.get(i).equals("Zuti")) {
+                brojZutih++;
+            }
+        }
+        return brojZutih;
+    }
+}
 
